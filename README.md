@@ -13,7 +13,7 @@ ref: https://github.com/bluwy/create-vite-extra
 ### prerender.js 追加
 
 ▼prerender.js
-https://github.com/vitejs/vite-plugin-vue/blob/main/playground/ssr-vue/prerender.js
+https://github.com/vitejs/vite-plugin-react/blob/main/playground/ssr-react/prerender.js
 
 package.json に以下を追加
 
