@@ -3,13 +3,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const toAbsolute = (p) => path.resolve(__dirname, p);
+const toAbsolute = (p: string) => path.resolve(__dirname, p);
 
 const templateHtml = fs.readFileSync("./dist/static/index.html", "utf-8");
 
 const render = (await import("./dist/server/entry-server.js")).render;
 
-const rendered = render("/");
+const rendered = render();
 
 const html = templateHtml
   .replace(`<!--app-head-->`, rendered.head ?? "")
