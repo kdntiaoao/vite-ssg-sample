@@ -13,7 +13,8 @@
     "start": "serve dist/static",
     "eslint": "eslint",
     "prettier": "prettier ./src --write",
-    "stylelint": "stylelint --fix --ignore-path .gitignore './src/**/*.css'"
+    "stylelint": "stylelint --fix --ignore-path .gitignore './src/**/*.css'",
+    "prepare": "husky"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -34,6 +35,8 @@
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "serve": "^14.2.3",
     "stylelint": "^16.8.2",
@@ -43,5 +46,15 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^8.1.0",
     "vite": "^5.2.10"
+  },
+  "lint-staged": {
+    "*.{css,scss}": [
+      "npm run prettier",
+      "npm run stylelint"
+    ],
+    "*.{js,mjs,cjs,ts,jsx,tsx}": [
+      "npm run prettier",
+      "npm run eslint"
+    ]
   }
 }
