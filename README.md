@@ -10,16 +10,22 @@ $ npm create vite-extra@latest
 
 ref: https://github.com/bluwy/create-vite-extra
 
-### prerender.js 追加
+### tsx インストール
 
-▼prerender.js
+```bash
+$ npm install --save-dev tsx
+```
+
+### prerender.ts 追加
+
+▼ 参考: prerender.js
 https://github.com/vitejs/vite-plugin-react/blob/main/playground/ssr-react/prerender.js
 
 package.json に以下を追加
 
 ```json
 "scripts": {
-  "generate": "vite build --ssrManifest .vite/ssr-manifest.json --outDir dist/static && npm run build:server && node prerender"
+  "generate": "vite build --ssrManifest .vite/ssr-manifest.json --outDir dist/static && npm run build:server && tsx prerender"
 }
 ```
 
